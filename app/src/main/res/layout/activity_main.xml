@@ -9,32 +9,40 @@
 
 <!--    No build.gradle, colocar a linha:  implementation 'androidx.recyclerview:recyclerview:1.1.0' -->
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/listaContatos"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        />
-
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/viewPager"
+        android:id="@+id/tabLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         />
+
     <androidx.viewpager.widget.ViewPager
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app: app:layout_constraintTop_toBottomOf="@id/viewPager"
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/viewPager"
         />
-<!--    Chamando uma fragment:-->
-<!--    include android: layout="@layout-->
-<!--    <Button-->
+
+
+<!--    <androidx.recyclerview.widget.RecyclerView-->
+<!--        android:id="@+id/listaContatos"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintEnd_toStartOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        />-->
+
+
+<!--    Outra forma, chamando uma fragment:-->
+<!-- <include android:layout="@layout/fragment_contatos"/> -->
+
+    <!--    <Button-->
 <!--        android:id="@+id/btnAddContato"-->
 <!--        android:text="Adicionar contato"-->
 <!--        android:layout_width="wrap_content"-->

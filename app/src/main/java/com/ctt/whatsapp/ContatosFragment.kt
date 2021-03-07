@@ -17,16 +17,16 @@ class ContatosFragment : Fragment() {
 //
 //        }
 
-    //OnCreate da Fragment
+    //OnCreate da Fragment  (equivalente ao OnCreateViewHolder da Activity)
     override fun onCreateView(
             inflater: LayoutInflater, container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+        // Inflate the layout for this fragment (infla o xml)
         return inflater.inflate(R.layout.fragment_contatos, container, false)
     }
 
-    //Após a fragment ser criada
+    //Após a fragment ser criada (a view)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
