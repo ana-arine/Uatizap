@@ -5,6 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.ctt.whatsapp.model.Contato
 
 //Fragment, vem de fragmento
 //Equivalente ao PEDAÇO de uma Activity
@@ -32,7 +36,7 @@ class ContatosFragment : Fragment() {
 
         //Toda parte lógica dos meus componentes
 
-//        PASSOS PARA SE CRIAR UMA RECYCLERVIEW
+        //        PASSOS PARA SE CRIAR UMA RECYCLERVIEW
 //                1. TENHA EM MÃOS OS SEUS DADOS (UMA MUTABLELISTOF POR EXEMPlO)
 //                2. JÁ TENHA CRIADO A RECYCLERVIEW EM SEU XML
 //                3. JÁ TENHA CRIADO O ITEM DA SUA LISTA EM XML
@@ -44,18 +48,23 @@ class ContatosFragment : Fragment() {
 
         //DADOS
         val listaConversa = mutableListOf<Contato>(
-                Contato(imagem = null, nome = "Henrique", ultimaMensagem = "Vou pagar a breja!", horarioMensagem = "8:01 PM"),
-                Contato(imagem = null, nome = "Priscilla", ultimaMensagem = "Vou pagar a porção!!", horarioMensagem = "7:35 PM"),
-                Contato(imagem = null, nome="André", ultimaMensagem = "Gente, vamos beber para esquecer os B.O.", horarioMensagem = "7:05 PM")
+            Contato(imagem = null, nome = "Bruno", ultimaMensagem = "Amanhã é sábado!!", horarioMensagem = "8:01 PM"),
+            Contato(imagem = null, nome = "Ruth", ultimaMensagem = "Vai descansar kkkkk", horarioMensagem = "8:05 PM"),
+            Contato(imagem = null, nome = "Jose", ultimaMensagem = "Beatles forever", horarioMensagem = "8:06 PM"),
+            Contato(imagem = null, nome = "Bruno", ultimaMensagem = "Amanhã é sábado!!", horarioMensagem = "8:01 PM"),
+            Contato(imagem = null, nome = "Ruth", ultimaMensagem = "Vai descansar kkkkk", horarioMensagem = "8:05 PM"),
+            Contato(imagem = null, nome = "Jose", ultimaMensagem = "Beatles forever", horarioMensagem = "8:06 PM")
         )
 
         val rvConversas = view.findViewById<RecyclerView>(R.id.listaContatos)
         //val addContato = view.findViewById<Button>(R.id.btnAddContato)
 
-        val adapterContato = ConversasAdapter(listaConversa)
-        rvConversas.adapter = adapterContato
+        val adapterContato = ConversasAdapter(listaConversa)  //Se for usar o companion object, coloco aqui a listaConversaEstatica no lugar de listaConversa.
+        rvConversas.adapter = adapterContato   // agora minha lista vai ter alguém pra vincular esses 2 caras
+        //(lista de contato e item da lista)
 
 //        addContato.setOnClickListener{
+////            onBackPressed()   // Pra voltar tela
 //            adapterContato.adicionarContato(
 //                Contato(imagem = null, nome = "Ana", ultimaMensagem = "Vou desinstalar o IntelliJ! Misericórdia.", horarioMensagem = "7:00 PM")
 //            )
@@ -63,13 +72,16 @@ class ContatosFragment : Fragment() {
 
         //1. LinearLayout = Dispor os elementos em coluna única na vertical (padrão) OU horizontal
         //2. GridLayout = Dispor os elementos em mais de uma coluna, como uma tabela
-        //3. StaggeredGridLayout = Dispor os elementos em mais de uma coluna, sem tamanho fixo
+        //3. StaggeredGridLayout = Dispor os elementos em mais de uma coluna, sem tamanho fixo (ex: Pinterest)
 
         //Não sabemos em qual Activity estamos, uma fragment pode ser colocada em diversos lugares
         //Para isso, temos que utilizar a função requireContext()
+
+        //Gerenciador de layout, pra dispor os contatos (por padrão, é na vertical)
         rvConversas.layoutManager = LinearLayoutManager(requireContext())
 
-        //val exemploAchandoRecyclerViewComKotlin = listaContatos
+        //val exemploAchandoUmaRecyclerviewComKotlim = listaContatos
+
     }
 
 }
