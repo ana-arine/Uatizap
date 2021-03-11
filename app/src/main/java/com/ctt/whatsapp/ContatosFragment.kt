@@ -14,6 +14,7 @@ import com.ctt.whatsapp.model.Contato
 //Equivalente ao PEDAÇO de uma Activity
 //A Recycler view a gente tira totalmente da Activity e traz para a Fragment.
 class ContatosFragment : Fragment() {
+//Posso fazer class ContatosFragment (private val listaContatos: MutableList<Contato>) : Fragment() {
 
 //    //No OnCreate da Activity
 //    override fun onCreate(savedInstanceState: Bundle?) {
@@ -74,11 +75,10 @@ class ContatosFragment : Fragment() {
         //2. GridLayout = Dispor os elementos em mais de uma coluna, como uma tabela
         //3. StaggeredGridLayout = Dispor os elementos em mais de uma coluna, sem tamanho fixo (ex: Pinterest)
 
-        //Não sabemos em qual Activity estamos, uma fragment pode ser colocada em diversos lugares
-        //Para isso, temos que utilizar a função requireContext()
 
         //Gerenciador de layout, pra dispor os contatos (por padrão, é na vertical)
-        rvConversas.layoutManager = LinearLayoutManager(requireContext())
+        rvConversas.layoutManager = LinearLayoutManager(requireContext())   //Não sabemos em qual Activity estamos, uma fragment pode ser colocada em diversos lugares
+    // Como não dá pra saber em qual activity será usada, usa-se a função requireContext() (genérico) em vez de "this".
 
         //val exemploAchandoUmaRecyclerviewComKotlim = listaContatos
 
